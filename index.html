@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>عرض التاريخ والوقت</title>
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      direction: rtl;
+    }
+
+    header {
+      background-color: #006064;
+      color: white;
+      padding: 30px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .clock {
+      font-size: 3em;
+      margin: 20px 0;
+      color: #004d40;
+      font-weight: bold;
+      direction: ltr;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .date-box {
+      background-color: white;
+      border: 2px solid #b2dfdb;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: right;
+    }
+
+    .label {
+      font-weight: bold;
+      font-size: 1.3em;
+      color: #00695c;
+      margin-bottom: 10px;
+    }
+
+    .value {
+      font-size: 1.2em;
+      color: #333;
+      direction: rtl;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>التاريخ والوقت</h1>
+    <div class="clock" id="clock">00:00:00</div>
+  </header>
+
+  <div class="container">
+    <div class="date-box">
+      <div class="label">التاريخ الميلادي (Gregorian)</div>
+      <div class="value" id="gregorian"></div>
+    </div>
+
+    <div class="date-box">
+      <div class="label">التاريخ اليولياني (Julian)</div>
+      <div class="value" id="julian"></div>
+    </div>
+
+    <div class="date-box">
+      <div class="label">التاريخ الهجري (Hijri)</div>
+      <div class="value" id="hijri"></div>
+    </div>
+  </div>
+
+  <script>
+    function padZero(num) {
+      return num.toString().padStart(2, '0');
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const hours = padZero(now.getHours());
+      const minutes = padZero(now.getMinutes());
+      const seconds = padZero(now.getSeconds());
+
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').textContent = timeString;
+    }
+
+    function formatDateArabicLatinNumbers(date, calendar = 'gregory') {
+      return new Intl.DateTimeFormat('ar-EG-u-nu-latn-ca-' + calendar, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }).format(date);
+    }
+
+    function updateDates() {
+      const now = new Date();
+
+      // الميلادي
+      document.getElementById('gregorian').textContent = formatDateArabicLatinNumbers(now, 'gregory');
+
+      // اليولياني (طرح 13 يوم)
+      const julian = new Date(now);
+      julian.setDate(julian.getDate() - 13);
+      document.getElementById('julian').textContent = formatDateArabicLatinNumbers(julian, 'gregory');
+
+      // الهجري
+      const hijri = formatDateArabicLatinNumbers(now, 'islamic');
+      document.getElementById('hijri').textContent = hijri;
+    }
+
+    // تحديث الساعة والتواريخ كل ثانية
+    updateClock();
+    updateDates();
+    setInterval(() => {
+      updateClock();
+      updateDates();
+    }, 1000);
+  </script>
+</body>
+</html>
