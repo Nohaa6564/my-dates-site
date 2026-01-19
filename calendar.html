@@ -13,15 +13,19 @@
   margin: 0;
   font-family: 'Cairo', sans-serif;
   background-color: #f5ebe0;
-  color: #6b4f3b;
+  color: #626F47;
   text-align: center;
+  font-size: 1.2vw;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* لون الساعة */
 .time {
-  color: #6b4f3b; /* بني متوسط واضح */
-  font-size: 2rem;
-  padding: 20px;
+  color: #626F47;
+  font-size: 2.5vw;
+  padding: 2vh;
+  font-weight: bold;
 }
 .scrolling-container {
   width: 100%;
@@ -33,10 +37,10 @@
 
 .scrolling-text {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 2.2vw;
   font-weight: bold;
-  color: #6b4f3b;
-  padding: 10px 0;
+  color: #626F47;
+  padding: 1vh 0;
   animation: scroll-right 12s linear infinite;
 }
 
@@ -58,10 +62,10 @@
 
   .scrolling-text {
     display: inline-block;
-    font-size: 1.5rem; /* يمكنك تغييره حسب الحاجة */
+    font-size: 2.2vw; /* يمكنك تغييره حسب الحاجة */
     font-weight: bold;
-    color: #6b4f3b; /* نفس لون النص الثاني */
-    padding: 10px 0;
+    color: #626F47; /* نفس لون النص الثاني */
+    padding: 1vh 0;
     animation: scroll-right 12s linear infinite;
   }
 
@@ -75,56 +79,54 @@
   }
 /* اليوم تحت التاريخ (مثلاً: الجمعة) */
 .calendar-date {
-  color: #ede0d4; /* بني رمادي أفتح */
-  font-size: 1.5rem;
+  color: #ffffff;
+  font-size: 2vw;
   font-weight: bold;
-}
-.time {
-  font-size: 2rem;
-  padding: 20px;
 }
 
 .calendar-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 10px;
+  gap: 1vw;
+  padding: 1vh;
   flex-wrap: wrap;
 }
 
 .calendar-box {
-  background-color: #957e70;
-  border-radius: 12px;
-  padding: 10px;
+  background-color: #626F47;
+  border-radius: 3vw;
+  padding: 1.2vw;
   cursor: pointer;
-  width: 250px;
+  width: 28vw;
+  max-width: 350px;
+  min-width: 250px;
   box-shadow: 0 4px 8px rgba(113, 107, 107, 0.5);
 }
 
 .calendar-box:hover {
-  background-color: rgb(176, 152, 135);
+  background-color: #aec489;
 }
 
 .calendar-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.6vw;
+  margin-bottom: 1vh;
   font-weight: bold;
   color: #ffffff;
 }
 
 .calendar-date {
-  font-size: 1rem;
+  font-size: 1.4vw;
 }
 
 .monthly-calendar {
   background-color: #f5ebe0;
   border-radius: 6px;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   margin: 10px auto;
   padding: 10px;
   display: none;
-  box-shadow: 0 4px 8px rgba(181, 156, 138);
+  box-shadow: 0 4px 8px #626F47;
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -135,69 +137,86 @@
   align-items: center;
   font-weight: bold;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 2vw;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  color: #7f5539;
+  color: #626F47;
   table-layout: fixed;
   word-wrap: break-word;
 }
+
 th, td {
-  padding: 10px;
-  border: 1px solid #957e70;
+  padding: 1vh 0.5vw;
+  border: 1px solid #626F47;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.6vw;
   font-weight: bold;
 }
 
-/* تنسيق أيام الأسبوع */
 th {
-  background-color: #957e70;
+  background-color: #626F47;
   font-weight: bold;
-  color: #ffffff; /* ← لون الكتابة لأيام الأسبوع */
+  color: #ffffff;
 }
 
-/* تنسيق أرقام الأيام */
 td {
-  color: #7f5539; /* ← لون الكتابة لأرقام الأيام */
+  color: #6c6c6c;
+  font-weight: bold;
 }
 
 .today {
-  background-color: #ba9e8b !important;
+  background-color: #879964 !important;
   color: #ffffff !important;
   border-radius: 8px;
 }
 
+td.selected-day {
+  background-color: #7e7500 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
 .calendar-nav-button {
-  background-color: #957e70;
+  background-color: #626F47;
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 1vh 2vw;
+  border-radius: 1vw;
+  font-size: 1.6vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .calendar-nav-button:hover {
-  background-color: #ba9e8b;
+  background-color: #aec489;
 }
-/* 🌐 استجابة الجوال */
+
+.selected-day {
+  background-color: #626F47 !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+}
+
+/* استجابة الجوال */
 @media (max-width: 600px) {
+  body {
+    font-size: 3.5vw;
+  }
+
   .calendar-title {
-    font-size: 1rem;
+    font-size: 4vw;
   }
 
   .calendar-date {
-    font-size: 0.9rem;
+    font-size: 3.5vw;
   }
 
   th, td {
-    padding: 4px 2px;
-    font-size: 0.75rem;
+    padding: 0.5vh;
+    font-size: 3vw;
   }
 
   .calendar-box,
@@ -207,16 +226,125 @@ td {
   }
 
   .time {
-    font-size: 1.5rem;
+    font-size: 6vw;
+  }
+
+  .scrolling-text {
+    font-size: 4vw;
+  }
+
+  .calendar-nav-button {
+    font-size: 4vw;
+    padding: 2vw;
+  }
+
+  .logo {
+    width: 60vw;
   }
 }
+
+/* استجابة الشاشات الكبيرة */
+@media (min-width: 1600px) {
+  .time {
+    font-size: 2vw;
+  }
+
+  .calendar-box {
+    width: 22vw;
+  }
+
+  .scrolling-text {
+    font-size: 1.6vw;
+  }
+
+  .calendar-title,
+  .calendar-date,
+  .calendar-nav-button {
+    font-size: 1.5vw;
+  }
+}
+
+.header-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 2vw;
+}
+
+.logo {
+  width: 20vw;
+  max-width: 350px;
+  height: auto;
+}
+/* استجابة شاشات التلفاز الكبيرة جدًا */
+/* استجابة مرنة لجميع أحجام شاشات التلفاز */
+@media (min-width: 1600px) {
+  html, body {
+    font-size: 0.8vw;
+    overflow: hidden; /* إلغاء التمرير */
+    margin: 0;
+    padding: 0;
+  }
+
+  .time {
+  font-size: clamp(18px, 4vw, 50px); /* من 18px حتى 50px */
+  font-weight: bold;
+  text-align: center;
+}
+
+.scrolling-text {
+  font-size: clamp(14px, 3vw, 40px); /* من 14px حتى 40px */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+  .calendar-box {
+    width: 17vw;
+    padding: 1vh;
+  }
+
+  .calendar-title,
+  .calendar-date {
+    font-size: 1vw;
+  }
+
+  .calendar-nav-button {
+    font-size: 1vw;
+    padding: 0.5vh 1vw;
+  }
+
+  th, td {
+    font-size: 1vw;
+    padding: 0.5vh 0.5vw;
+  }
+
+  .header-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1vh 0;
+  }
+
+  .header-logos .logo {
+    width: 12vw;
+    max-width: 200px;
+  }
+}
+
+
+
   </style>
 </head>
 <body>
   <div class="time" id="clock"></div>
-
+ </div>
 <div class="scrolling-container">
-  <div class="scrolling-text">التموين الفني س ص ل 11</div>
+  <div class="scrolling-text">مرحبا بكم في التموين الفني س ص 302 ل 11 </div>
+</div>
+<div class="header-logos">
+  <img src="logo-right.png" alt="شعار يمين" class="logo right">
+  <img src="logo-left.png" alt="شعار يسار" class="logo left">
 </div>
   <div class="calendar-container">
     <div class="calendar-box" onclick="showCalendar('julian-astro')">
@@ -267,16 +395,13 @@ td {
     let hijriDate = { day: 0, month: 0, year: 0 };
     
 function getSimpleJulianDate(date = new Date()) {
-  const oneDay = 1000 * 60 * 60 * 24;
-
-  // اجعل التاريخ يبدأ من 18 يونيو 2025 بدلاً من 1 يناير
-  const baseDate = new Date(2025, 5, 18); // 5 = يونيو لأن الأشهر تبدأ من 0
   const currentDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-
-  const diffInDays = Math.floor((currentDate - baseDate) / oneDay);
-
-  return 5169 + diffInDays;
+  const yearDiff = currentDate.getFullYear() - 2020;
+  const dayOfYear = Math.floor((currentDate - new Date(currentDate.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+  const yearPrefix = yearDiff % 10;
+  return `${yearPrefix}${String(dayOfYear).padStart(3, '0')}`;
 }
+
 
   function updateJulianDayNumber() {
     const julianDay = getSimpleJulianDate();
@@ -748,6 +873,7 @@ function getSimpleJulianDate(date = new Date()) {
       
       // تحديث التاريخ والوقت كل دقيقة
       setInterval(function() {
+        if (!isManualSelection) {
         currentDate = new Date();
         updateDates();
         setAllDates();
@@ -755,6 +881,7 @@ function getSimpleJulianDate(date = new Date()) {
         // إذا كان التقويم معروضًا، قم بتحديثه أيضًا
         if (document.getElementById('calendar-display').style.display === 'block') {
           renderCalendar();
+        }
         }
       }, 60000); // تحديث كل دقيقة
       
@@ -772,7 +899,7 @@ function getSimpleJulianDate(date = new Date()) {
     
     // تحديث الساعة
     function updateClock() {
-      const now = new Date();
+      const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Riyadh" }));
       // استخدام الأرقام الإنجليزية بدلاً من العربية
       document.getElementById('clock').innerText = now.toLocaleTimeString('en-US');
     }
@@ -931,12 +1058,11 @@ function getSimpleJulianDate(date = new Date()) {
   const daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
   const firstDay = new Date(calendarYear, calendarMonth, 1).getDay();
 
-  document.getElementById('calendar-title').innerText = `${monthName} ${calendarYear} (اليوم الجولياني الفلكي)`;
+  document.getElementById('calendar-title').innerText = `${monthName} ${calendarYear} `;
   document.getElementById('weekdays').innerHTML = weekdayNames.map(d => `<th>${d}</th>`).join('');
 
   let html = '';
   let date = 1;
-  const baseDate = new Date(2025, 5, 18); // 18 يونيو 2025 = اليوم 5169
 
   for (let i = 0; i < 6; i++) {
     let row = '<tr>';
@@ -947,15 +1073,14 @@ function getSimpleJulianDate(date = new Date()) {
         break;
       } else {
         const currentDay = new Date(calendarYear, calendarMonth, date);
-        const diffInDays = Math.round((currentDay - baseDate) / (1000 * 60 * 60 * 24));
-        const julianValue = 5169 + diffInDays;
+      const julianValue = getSimpleJulianDate(currentDay);
         const isToday = (
   currentDay.getDate() === currentDate.getDate() &&
   currentDay.getMonth() === currentDate.getMonth() &&
   currentDay.getFullYear() === currentDate.getFullYear()
 );
 
-row += `<td class="${isToday ? 'today' : ''}">${julianValue}</td>`;
+row += `<td class="${isToday ? 'today' : ''}" onclick="onJulianClick(${calendarYear}, ${calendarMonth}, ${date}, this)">${julianValue}</td>`;
         date++;
       }
     }
@@ -966,14 +1091,31 @@ row += `<td class="${isToday ? 'today' : ''}">${julianValue}</td>`;
   document.getElementById('calendar-body').innerHTML = html;
 }
 function updateInventory() {
-  const baseDay = 5180;
-  const interval = 90;
-  const todayJulian = getSimpleJulianDate();
+const today = new Date();
 
-  const passed = todayJulian - baseDay;
-  const nextInventory = baseDay + Math.ceil(passed / interval) * interval;
+// سنة مرجعية صحيحة
+const referenceYear = 2025;
+const referenceInventory = 6080; // قيمة الجرد في بداية 2025
 
-  document.getElementById("inventory").textContent = "الجرد القادم " + nextInventory;
+// فرق السنوات
+const yearDiff = today.getFullYear() - referenceYear;
+
+// الجرد في بداية السنة الحالية
+const inventoryAtYearStart = referenceInventory + yearDiff * 10;
+
+// بداية السنة الحالية
+const startOfYear = new Date(today.getFullYear(), 0, 1);
+
+// عدد الأيام منذ بداية السنة
+const daysPassed = Math.floor(
+(today - startOfYear) / (1000 * 60 * 60 * 24)
+);
+
+// كل 90 يوم يزيد 1
+const inventoryNow = inventoryAtYearStart + Math.floor(daysPassed / 90);
+
+document.getElementById("inventory").textContent =
+"الجرد القادم: " + inventoryNow;
 }
 
 // عند التحميل
@@ -986,6 +1128,113 @@ setInterval(updateInventory, 60000);
       .then(() => console.log('Service Worker مسجّل بنجاح'))
       .catch((error) => console.error('فشل تسجيل Service Worker:', error));
   }
+function onJulianClick(year, month, day, clickedCell) {
+  isManualSelection = true; // ← المستخدم اختار يدوياً
+  const clickedDate = new Date(year, month, day);
+
+  console.log('التاريخ الميلادي الناتج:', clickedDate);
+  // تحويل إلى هجري
+  const hijri = gregorianToHijri(clickedDate);
+
+  // تنسيق التاريخ الميلادي
+  const dayName = clickedDate.toLocaleDateString('ar', { weekday: 'long' });
+  const gDateStr = `${dayName}، ${clickedDate.getDate()} ${gregorianMonths[clickedDate.getMonth()]} ${clickedDate.getFullYear()}`;
+  const hDateStr = `${dayName}، ${hijri.day} ${hijriMonths[hijri.month]} ${hijri.year} هـ`;
+
+  // عرض التواريخ
+  document.getElementById('gregorian-date').innerText = gDateStr;
+  document.getElementById('hijri-date').innerText = hDateStr;
+
+  // إزالة التحديد من كل الأيام
+  const allCells = document.querySelectorAll('#calendar-body td');
+  allCells.forEach(cell => cell.classList.remove('selected-day'));
+
+  // إضافة التحديد للخلية المضغوطة فقط
+  clickedCell.classList.add('selected-day');
+}
+// ✅ تعديل على سكربت HTML/JS بناءً على طلبك
+// المطلوب:
+// 1. إصلاح حساب التاريخ الهجري بناءً على بيانات أم القرى المدخلة يدويًا ✅
+// 2. عند الضغط على التاريخ الهجري أو الميلادي يتم العودة للتاريخ الحالي ✅
+
+// 📌 أضف هذا الكود داخل <script> في نهاية الملف قبل </body>
+
+// ✅ تعديل دالة showCalendar لتحديث التاريخ الهجري/الميلادي بشكل صحيح عند عرض تقويم جولياني
+function showCalendar(type) {
+  selectedCalendar = type;
+
+  if (type === 'hijri') {
+    calendarMonth = hijriDate.month;
+    calendarYear = hijriDate.year;
+    renderCalendar();
+  } else if (type === 'julian-astro') {
+    calendarMonth = currentDate.getMonth();
+    calendarYear = currentDate.getFullYear();
+    renderJulianAstroCalendar();
+  } else {
+    calendarMonth = currentDate.getMonth();
+    calendarYear = currentDate.getFullYear();
+    renderCalendar();
+  }
+
+  document.getElementById('calendar-display').style.display = 'block';
+}
+
+// ✅ عند الضغط على تاريخ هجري أو ميلادي: العودة للتاريخ الحالي
+// أضف هذه الأحداث بعد تحميل الصفحة
+window.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('hijri-date').addEventListener('click', resetToToday);
+  document.getElementById('gregorian-date').addEventListener('click', resetToToday);
+});
+
+function resetToToday() {
+    isManualSelection = false; // ← السماح بالتحديث التلقائي مجددًا
+  currentDate = new Date();
+  hijriDate = gregorianToHijri(currentDate);
+  setAllDates();
+  if (selectedCalendar === 'hijri' || selectedCalendar === 'gregorian') {
+    calendarMonth = currentDate.getMonth();
+    calendarYear = currentDate.getFullYear();
+    renderCalendar();
+  } else if (selectedCalendar === 'julian-astro') {
+    calendarMonth = currentDate.getMonth();
+    calendarYear = currentDate.getFullYear();
+    renderJulianAstroCalendar();
+  }
+}
+
+// ✅ إصلاح دالة gregorianToHijri لاستخدام بيانات أم القرى بشكل يدوي فقط وعدم الرجوع للحساب التقليدي
+function gregorianToHijri(gregorianDate) {
+  for (const year in ummAlQuraAdjustments) {
+    for (const month in ummAlQuraAdjustments[year]) {
+      const monthStart = ummAlQuraAdjustments[year][month];
+      let nextMonthStart;
+
+      if (parseInt(month) === 11) {
+        nextMonthStart = ummAlQuraAdjustments[parseInt(year)+1]?.[0] || new Date(monthStart.getTime() + 30 * 86400000);
+      } else {
+        nextMonthStart = ummAlQuraAdjustments[year][parseInt(month) + 1];
+      }
+
+      if (monthStart <= gregorianDate && (!nextMonthStart || gregorianDate < nextMonthStart)) {
+        const diffTime = gregorianDate - monthStart;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+        return {
+          day: diffDays,
+          month: parseInt(month),
+          year: parseInt(year)
+        };
+      }
+    }
+  }
+
+  // إن لم يتم العثور عليه: نعيد تاريخ وهمي بدل الحساب التقليدي
+  return {
+    day: 1,
+    month: 0,
+    year: 1400
+  };
+}
 
   </script>
 </body>
